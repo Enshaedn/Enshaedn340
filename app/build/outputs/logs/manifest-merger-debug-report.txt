@@ -1,0 +1,109 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml:2:1-24:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\0ca432b0e57f6f097336fbade418e639\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\09d8fb426335d14d52dec48cfd1d9d32\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\8c584f3822dc74524a45e2a96d75cfd7\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\0e5327b5ef08de1854590cd61f3973c3\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\b17dd015ec26e3cd244f8969b2c3ac50\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\76b672ea88815237365f190b0c1d39ea\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\12c89118966816d5c5f36994a71b3462\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\028f25306e118a5df629cef842c95b7f\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\99cfd60c3d19b1fbf5f9013c4c021e65\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\6704cc7fa9a2f31da0ba663f3a64cd87\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\7d6cd126d036719be1f7842d058c5781\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\72dcad34f8bb97c2d9ea37af3ac99075\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml:2:1-24:12
+	package
+		ADDED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml:3:5-46
+		INJECTED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml:2:1-24:12
+		INJECTED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml:2:1-24:12
+		INJECTED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml:2:11-69
+application
+ADDED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml:5:5-22:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\09d8fb426335d14d52dec48cfd1d9d32\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\09d8fb426335d14d52dec48cfd1d9d32\AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml:11:9-40
+activity#com.enshaedn.ad340.enshaedn340k.MainActivity
+ADDED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml:12:9-18:20
+	android:name
+		ADDED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml:12:19-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml:13:13-17:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml:14:17-69
+	android:name
+		ADDED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml:14:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml:16:17-77
+	android:name
+		ADDED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml:16:27-74
+activity#com.enshaedn.ad340.enshaedn340k.DisplayPhraseActivity
+ADDED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml:19:9-21:20
+	android:parentActivityName
+		ADDED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml:20:19-61
+	android:name
+		ADDED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml:19:19-56
+uses-sdk
+INJECTED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\0ca432b0e57f6f097336fbade418e639\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\0ca432b0e57f6f097336fbade418e639\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\09d8fb426335d14d52dec48cfd1d9d32\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\09d8fb426335d14d52dec48cfd1d9d32\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\8c584f3822dc74524a45e2a96d75cfd7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\8c584f3822dc74524a45e2a96d75cfd7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\0e5327b5ef08de1854590cd61f3973c3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\0e5327b5ef08de1854590cd61f3973c3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\b17dd015ec26e3cd244f8969b2c3ac50\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\b17dd015ec26e3cd244f8969b2c3ac50\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\76b672ea88815237365f190b0c1d39ea\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\76b672ea88815237365f190b0c1d39ea\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\12c89118966816d5c5f36994a71b3462\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\12c89118966816d5c5f36994a71b3462\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\028f25306e118a5df629cef842c95b7f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\028f25306e118a5df629cef842c95b7f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\99cfd60c3d19b1fbf5f9013c4c021e65\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\99cfd60c3d19b1fbf5f9013c4c021e65\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\6704cc7fa9a2f31da0ba663f3a64cd87\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\6704cc7fa9a2f31da0ba663f3a64cd87\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\7d6cd126d036719be1f7842d058c5781\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\7d6cd126d036719be1f7842d058c5781\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\72dcad34f8bb97c2d9ea37af3ac99075\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Enshaedn\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\72dcad34f8bb97c2d9ea37af3ac99075\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Enshaedn\Desktop\Enshaedn\AD340\app\src\main\AndroidManifest.xml

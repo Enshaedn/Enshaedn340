@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AD340K by Enshaedn</string>
+    <string name="main_content">Alex Clontz\'s AD340 App - Homework 2</string>
+    <string name="ein_pi_desc">Wife and corgi</string>
+    <string name="edit_message">Enter a message</string>
+    <string name="button_click">Click Me!</string>
+    <string name="display_info">My wife and I live in Seattle with our corgi, Einstein. I live a pretty quiet life consisting mostly
+    of work and school. The AD program at NSC has been very enjoyable so far and I look forward to changing careers.</string>
+    <string name="placeholder"></string>
+</resources>
