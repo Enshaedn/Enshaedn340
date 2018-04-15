@@ -1,7 +1,7 @@
 package com.enshaedn.ad340.enshaedn340k
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_display_phrase.*
 
