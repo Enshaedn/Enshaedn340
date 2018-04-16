@@ -1,7 +1,4 @@
-#Sun Apr 15 16:58:37 PDT 2018
-base.0=C\:\\Users\\Enshaedn\\Desktop\\Enshaedn\\AD340\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\12
-path.1=classes.dex
-renamed.1=classes2.dex
+#Sun Apr 15 17:26:28 PDT 2018
+base.0=C\:\\Users\\Enshaedn\\Desktop\\Enshaedn\\AD340\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\15
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=C\:\\Users\\Enshaedn\\Desktop\\Enshaedn\\AD340\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\13

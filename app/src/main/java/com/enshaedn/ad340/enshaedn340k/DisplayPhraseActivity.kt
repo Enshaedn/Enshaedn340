@@ -16,7 +16,7 @@ class DisplayPhraseActivity : AppCompatActivity() {
         val message = intent.getStringExtra(PASS_PHRASE)
 
         //capture the layout's TextView and set the string as its text
-        textView3.text = message
+        textView3.text = message.toString()
 
         Log.d(msg,"Second Activity Created (onCreate called)")
     }
