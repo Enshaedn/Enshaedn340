@@ -7,4 +7,8 @@
     <string name="display_info">My wife and I live in Seattle with our corgi, Einstein. I live a pretty quiet life consisting mostly
     of work and school. The AD program at NSC has been very enjoyable so far and I look forward to changing careers.</string>
     <string name="placeholder"></string>
+    <string name="gridB1">1</string>
+    <string name="gridB2">2</string>
+    <string name="gridB3">3</string>
+    <string name="gridB4">4</string>
 </resources>
