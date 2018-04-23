@@ -4,9 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
+import android.widget.*
 
 const val PASS_PHRASE = "com.enshaedn.ad340.enshaedn340k.MESSAGE"
 
@@ -36,14 +34,6 @@ class MainActivity : AppCompatActivity() {
 
     //toast duration
     private val tDur = Toast.LENGTH_SHORT
-    /*
-    fun gridClicked(view: View, button: Button) {
-        when(button.id) {
-            gridb2.id -> Toast.makeText(applicationContext, "Button 2 clicked!", tDur).show()
-            gridb3.id -> Toast.makeText(applicationContext, "Button 3 clicked!", tDur).show()
-            gridb4.id -> Toast.makeText(applicationContext, "Button 4 clicked!", tDur).show()
-        }
-    }*/
 
     //toast message for button 2
     fun gridB2Clicked(view: View) {
