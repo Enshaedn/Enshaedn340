@@ -14,8 +14,10 @@ class displayMovie : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display_movie)
 
+        //get the data in JSON format from the intent passed from the zombieList
         val zData = intent.getParcelableExtra<zMovie>("zSelect")
 
+        //create variables for the view objects in the displayMovie activity layout
         DownloadImageTask(findViewById(R.id.picView)).execute(zData.image)
         val picView = findViewById<ImageView>(R.id.picView)
         val titleView = findViewById<TextView>(R.id.dispTitle)
@@ -23,6 +25,7 @@ class displayMovie : AppCompatActivity() {
         val yearView = findViewById<TextView>(R.id.dispYear)
         val descView = findViewById<TextView>(R.id.dispDesc)
 
+        //populate the views with their respective data
         picView.contentDescription = zData.title
         titleView.text = zData.title
         dirView.append(zData.director)
@@ -32,6 +35,7 @@ class displayMovie : AppCompatActivity() {
     }
 }
 
+//class to download the images from their URLs
 private class DownloadImageTask(internal var bmImage: ImageView) : AsyncTask<String, Void, Bitmap>() {
     override fun doInBackground(vararg urls: String): Bitmap? {
         val urlDisp = urls[0]

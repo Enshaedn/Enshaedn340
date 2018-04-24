@@ -27,7 +27,8 @@
         <activity
             android:name=".displayMovie"
             android:parentActivityName=".zombieList" />
-        <activity android:name=".zRow"></activity>
+        <activity android:name=".aboutApp"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>

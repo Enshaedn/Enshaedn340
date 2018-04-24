@@ -15,4 +15,6 @@
     <string name="Director">Directed By:&#160;</string>
     <string name="zDescription">Movie Description Placeholder</string>
     <string name="Year">Released:&#160;</string>
+    <string name="aboutApp">This app is being created for AD340 at NSC. Currently the app does not have any particular
+    direction, but may be utilized for a text-only game.</string>
 </resources>

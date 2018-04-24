@@ -27,6 +27,7 @@ class zombieList : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_zombie_list)
 
+        //open/set JSON file data to a variable
         val zFile = application.resources.openRawResource (R.raw.zombie_movies)
         val zList = readStream(zFile)
 
@@ -40,11 +41,13 @@ class zombieList : AppCompatActivity() {
         }
     }
 
+    //pass JSON file through InputStream - read file
     private fun readStream(zFile: InputStream): ArrayList<zMovie> {
         val zJSON = JsonReader(InputStreamReader(zFile))
         return readZJSON(zJSON)
     }
 
+    //read each JSON line and return array of zMovie objects
     private fun readZJSON(zJSON: JsonReader): ArrayList<zMovie> {
         val movies =  ArrayList<zMovie>()
         zJSON.beginArray()
@@ -55,6 +58,7 @@ class zombieList : AppCompatActivity() {
         return movies
     }
 
+    //creates the zMovie objects to send back to the readZJSON function
     private fun getMovie(zJSON: JsonReader): zMovie {
         var title = ""
         var year = 0
@@ -79,6 +83,7 @@ class zombieList : AppCompatActivity() {
     }
 }
 
+//class to create movie objects based on the JSON object passed through
 class zMovie(title: String, year: Int, director: String, image: String, description: String): Parcelable {
     val title = title
     val year = year
@@ -116,6 +121,8 @@ class zMovie(title: String, year: Int, director: String, image: String, descript
     }
 }
 
+
+//adapter class to create ViewHolders for each row (view) within the recycler
 class MyAdapter(private val myDataset: ArrayList<zMovie>, private val zContext: zombieList): RecyclerView.Adapter<MyAdapter.ViewHolder>() {
 
     class ViewHolder(val view: View): RecyclerView.ViewHolder(view) {
