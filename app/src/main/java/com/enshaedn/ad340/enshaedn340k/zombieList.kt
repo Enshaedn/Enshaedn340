@@ -8,8 +8,12 @@ import android.os.Parcelable
 import android.support.constraint.ConstraintLayout
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.text.Layout
 import android.util.JsonReader
+import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.RelativeLayout
 import android.widget.TextView
 import java.io.InputStream
 import java.io.InputStreamReader
@@ -114,25 +118,21 @@ class zMovie(title: String, year: Int, director: String, image: String, descript
 
 class MyAdapter(private val myDataset: ArrayList<zMovie>, private val zContext: zombieList): RecyclerView.Adapter<MyAdapter.ViewHolder>() {
 
-    private var zCounter = 0
-
-    class ViewHolder(val textView: TextView): RecyclerView.ViewHolder(textView)
+    class ViewHolder(val view: View): RecyclerView.ViewHolder(view) {
+        val tView: TextView = view.findViewById(R.id.rowTitle)
+        val yView: TextView = view.findViewById(R.id.rowYear)
+        val rLayout: RelativeLayout = view.findViewById(R.id.zRowParent)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyAdapter.ViewHolder {
-        val titleView = TextView(parent.context)
-        titleView.textSize = 30.toFloat()
-        titleView.setPadding(10,10,10,10)
-        val params = ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-        params.setMargins(10,10,10,10)
-        titleView.layoutParams = params
-
-        zCounter++
-        return ViewHolder(titleView)
+        val view: View = LayoutInflater.from(zContext).inflate(R.layout.zrow, parent, false)
+        return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.textView.text = myDataset[position].title + " " + myDataset[position].year.toString()
-        holder.textView.setOnClickListener {
+        holder.tView.text = myDataset[position].title
+        holder.yView.text = myDataset[position].year.toString()
+        holder.view.setOnClickListener {
             val zIntent = Intent(zContext, displayMovie::class.java).apply {
                 putExtra("zSelect", myDataset[position])
             }

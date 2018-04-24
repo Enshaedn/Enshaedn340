@@ -12,7 +12,7 @@
     <string name="gridB3">3</string>
     <string name="gridB4">4</string>
     <string name="Title">Title Placeholder</string>
-    <string name="Director">Directed By: </string>
+    <string name="Director">Directed By:&#160;</string>
     <string name="zDescription">Movie Description Placeholder</string>
-    <string name="Year">Released: </string>
+    <string name="Year">Released:&#160;</string>
 </resources>

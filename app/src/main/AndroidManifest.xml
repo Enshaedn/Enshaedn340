@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.enshaedn.ad340.enshaedn340k">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,12 +20,14 @@
         </activity>
         <activity
             android:name=".DisplayPhraseActivity"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".zombieList"
-            android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".displayMovie"
-            android:parentActivityName=".zombieList"></activity>
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".displayMovie"
+            android:parentActivityName=".zombieList" />
+        <activity android:name=".zRow"></activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
+
 </manifest>

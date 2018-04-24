@@ -25,8 +25,8 @@ class displayMovie : AppCompatActivity() {
 
         picView.contentDescription = zData.title
         titleView.text = zData.title
-        dirView.text = "Directed By: " + zData.director
-        yearView.text = "Released: " + zData.year.toString()
+        dirView.append(zData.director)
+        yearView.append(zData.year.toString())
         descView.text = zData.description
         descView.movementMethod = ScrollingMovementMethod()
     }
