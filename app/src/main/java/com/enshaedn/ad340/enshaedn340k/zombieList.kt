@@ -10,11 +10,10 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.text.Layout
 import android.util.JsonReader
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.RelativeLayout
 import android.widget.TextView
+import android.widget.Toast
 import java.io.InputStream
 import java.io.InputStreamReader
 
@@ -39,6 +38,22 @@ class zombieList : AppCompatActivity() {
             layoutManager = viewManager
             adapter = viewAdapter
         }
+
+        //set toolbar
+        setSupportActionBar(findViewById(R.id.toolBar))
+
+        //add up button
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.ad340app, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
+        return super.onOptionsItemSelected(item)
     }
 
     //pass JSON file through InputStream - read file

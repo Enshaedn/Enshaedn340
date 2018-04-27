@@ -3,6 +3,8 @@ package com.enshaedn.ad340.enshaedn340k
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.*
 
@@ -24,6 +26,16 @@ class MainActivity : AppCompatActivity() {
             putExtra(PASS_PHRASE, phrase)
         }
         startActivity(intent)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.ad340app, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
+        return super.onOptionsItemSelected(item)
     }
 
     //called when the user presses the '1' button

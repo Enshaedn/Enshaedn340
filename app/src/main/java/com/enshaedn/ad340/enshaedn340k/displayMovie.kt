@@ -6,6 +6,8 @@ import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.*
 
 class displayMovie : AppCompatActivity() {
@@ -32,6 +34,22 @@ class displayMovie : AppCompatActivity() {
         yearView.append(zData.year.toString())
         descView.text = zData.description
         descView.movementMethod = ScrollingMovementMethod()
+
+        //set toolbar
+        setSupportActionBar(findViewById(R.id.toolBar))
+
+        //add up button
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.ad340app, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
+        return super.onOptionsItemSelected(item)
     }
 }
 
