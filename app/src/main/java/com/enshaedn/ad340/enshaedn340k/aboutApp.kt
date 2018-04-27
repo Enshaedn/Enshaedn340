@@ -8,5 +8,11 @@ class aboutApp : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_about_app)
+
+        //set toolbar
+        setSupportActionBar(findViewById(R.id.toolBar))
+
+        //add up button
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 }

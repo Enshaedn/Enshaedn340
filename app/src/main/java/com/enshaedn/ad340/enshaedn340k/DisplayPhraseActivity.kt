@@ -19,6 +19,12 @@ class DisplayPhraseActivity : AppCompatActivity() {
         textView3.text = message.toString()
 
         Log.d(msg,"Second Activity Created (onCreate called)")
+
+        //set toolbar
+        setSupportActionBar(findViewById(R.id.toolBar))
+
+        //add up button
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onStart() {
