@@ -47,9 +47,14 @@ class displayMovie : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
-        return super.onOptionsItemSelected(item)
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.menu_settings -> {
+                Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
+                return true
+            }
+            else -> return super.onOptionsItemSelected(item)
+        }
     }
 }
 
