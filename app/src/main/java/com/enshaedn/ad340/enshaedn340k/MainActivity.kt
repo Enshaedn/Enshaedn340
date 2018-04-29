@@ -2,6 +2,10 @@ package com.enshaedn.ad340.enshaedn340k
 
 import android.content.Intent
 import android.os.Bundle
+import android.support.design.widget.NavigationView
+import android.support.v4.view.GravityCompat
+import android.support.v4.widget.DrawerLayout
+import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
@@ -10,12 +14,40 @@ import android.widget.*
 
 const val PASS_PHRASE = "com.enshaedn.ad340.enshaedn340k.MESSAGE"
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+    lateinit var mDrawerLayout: DrawerLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolBar))
+
+        val actBar: ActionBar? = supportActionBar
+        actBar?.setDisplayHomeAsUpEnabled(true)
+        actBar?.setHomeAsUpIndicator(R.drawable.ic_menu_black_48dp)
+
+        mDrawerLayout = findViewById(R.id.navDrawer)
+
+        val navigationView: NavigationView = findViewById(R.id.navView)
+        navigationView.setNavigationItemSelectedListener(this)
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.nav_about -> {
+                val aboutIntent = Intent(this, aboutApp::class.java)
+                startActivity(aboutIntent)
+            }
+
+            R.id.nav_movie_list -> {
+                val zIntent = Intent(this, zombieList::class.java)
+                startActivity(zIntent)
+            }
+        }
+
+        mDrawerLayout.closeDrawer(GravityCompat.START)
+        return true
     }
 
     //called when the user presses the 'Click Me!' button
@@ -39,6 +71,12 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
                 return true
             }
+
+            android.R.id.home -> {
+                mDrawerLayout.openDrawer(GravityCompat.START)
+                return true
+            }
+
             else -> return super.onOptionsItemSelected(item)
         }
     }
