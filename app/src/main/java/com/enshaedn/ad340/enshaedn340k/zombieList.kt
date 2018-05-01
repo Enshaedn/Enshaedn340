@@ -46,6 +46,14 @@ class zombieList : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
+    override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
+        super.onPrepareOptionsMenu(menu)
+        menu?.findItem(R.id.phrase)?.setVisible(false)
+        menu?.findItem(R.id.about)?.setVisible(false)
+        menu?.findItem(R.id.zDetail)?.setVisible(false)
+        return true
+    }
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.ad340app, menu)
         return super.onCreateOptionsMenu(menu)
@@ -57,6 +65,12 @@ class zombieList : AppCompatActivity() {
                 Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
                 return true
             }
+
+            R.id.zlist -> {
+                Toast.makeText(this, "Sort", Toast.LENGTH_SHORT).show()
+                return true
+            }
+
             else -> return super.onOptionsItemSelected(item)
         }
     }

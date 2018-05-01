@@ -1,9 +1,10 @@
 package com.enshaedn.ad340.enshaedn340k
 
+import android.app.SearchManager
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.NavigationView
-import android.support.v4.app.NavUtils
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBar
@@ -17,7 +18,7 @@ const val PASS_PHRASE = "com.enshaedn.ad340.enshaedn340k.MESSAGE"
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    lateinit var mDrawerLayout: DrawerLayout
+    private lateinit var mDrawerLayout: DrawerLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +33,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         val navigationView: NavigationView = findViewById(R.id.navView)
         navigationView.setNavigationItemSelectedListener(this)
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
+        super.onPrepareOptionsMenu(menu)
+        menu?.findItem(R.id.phrase)?.setVisible(false)
+        menu?.findItem(R.id.zlist)?.setVisible(false)
+        menu?.findItem(R.id.zDetail)?.setVisible(false)
+        menu?.findItem(R.id.about)?.setVisible(false)
+        return true
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -78,6 +88,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         when(item.itemId) {
             R.id.menu_settings -> {
                 Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
+                return true
+            }
+
+            R.id.search -> {
+                Toast.makeText(this, "Search Clicked", Toast.LENGTH_SHORT).show()
                 return true
             }
 
