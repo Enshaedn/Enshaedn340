@@ -3,6 +3,7 @@ package com.enshaedn.ad340.enshaedn340k
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.NavigationView
+import android.support.v4.app.NavUtils
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBar
@@ -25,7 +26,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         val actBar: ActionBar? = supportActionBar
         actBar?.setDisplayHomeAsUpEnabled(true)
-        actBar?.setHomeAsUpIndicator(R.drawable.ic_menu_black_48dp)
+        actBar?.setHomeAsUpIndicator(R.drawable.ic_menu_black_24dp)
 
         mDrawerLayout = findViewById(R.id.navDrawer)
 
@@ -47,7 +48,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
         mDrawerLayout.closeDrawer(GravityCompat.START)
-        return true
+        return super.onOptionsItemSelected(item)
+    }
+
+    override fun onBackPressed() {
+        if(mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
+            mDrawerLayout.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
     }
 
     //called when the user presses the 'Click Me!' button

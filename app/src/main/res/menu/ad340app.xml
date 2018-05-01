@@ -4,7 +4,7 @@
 
     <item android:id="@+id/menu_settings"
         android:title="@string/title_settings"
-        android:icon="@drawable/ic_settings_black_48dp"
+        android:icon="@drawable/ic_settings_black_24dp"
         app:showAsAction="never" />
 
 </menu>

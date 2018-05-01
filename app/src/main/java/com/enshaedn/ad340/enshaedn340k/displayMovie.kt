@@ -9,6 +9,7 @@ import android.text.method.ScrollingMovementMethod
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.*
+import kotlinx.android.synthetic.main.activity_display_movie.*
 
 class displayMovie : AppCompatActivity() {
 
