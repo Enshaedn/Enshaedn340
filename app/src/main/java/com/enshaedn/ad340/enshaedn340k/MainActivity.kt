@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         sharedPref = getPreferences(Context.MODE_PRIVATE)
         val pEdit = findViewById<EditText>(R.id.editText)
         val storedPhrase = sharedPref.getString("phraseInput", "")
-        if(storedPhrase.isNotEmpty()) {
+        if(phraseCheck(storedPhrase)) {
             pEdit.setText(storedPhrase)
         } else {
             pEdit.setHint("Enter a message")
@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val editText = findViewById<EditText>(R.id.editText)
         val phrase = editText.text.toString()
 
-        if(phrase.isNotEmpty()) {
+        if(phraseCheck(phrase)) {
             val editor = sharedPref.edit()
             editor.putString("phraseInput", phrase)
             editor.commit()
@@ -98,6 +98,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         } else {
             Toast.makeText(applicationContext, "You must enter something", tDur).show()
         }
+    }
+
+    //kind of pointless function, but had to separate it out to be able to test validation
+    fun phraseCheck(phrase: String): Boolean {
+        return phrase.isNotEmpty()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
