@@ -32,9 +32,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val pEdit = findViewById<EditText>(R.id.editText)
         val storedPhrase = sharedPref.getString("phraseInput", "")
         if(storedPhrase.isNotEmpty()) {
-            pEdit.setHint(storedPhrase)
+            pEdit.setText(storedPhrase)
         } else {
-            pEdit.setHint("why won't this work?")
+            pEdit.setHint("Enter a message")
         }
 
         val actBar: ActionBar? = supportActionBar
@@ -85,10 +85,19 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     fun sendPhrase(view: View) {
         val editText = findViewById<EditText>(R.id.editText)
         val phrase = editText.text.toString()
-        val intent = Intent(this, DisplayPhraseActivity::class.java).apply {
-            putExtra(PASS_PHRASE, phrase)
+
+        if(phrase.isNotEmpty()) {
+            val editor = sharedPref.edit()
+            editor.putString("phraseInput", phrase)
+            editor.commit()
+
+            val intent = Intent(this, DisplayPhraseActivity::class.java).apply {
+                putExtra(PASS_PHRASE, phrase)
+            }
+            startActivity(intent)
+        } else {
+            Toast.makeText(applicationContext, "You must enter something", tDur).show()
         }
-        startActivity(intent)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
