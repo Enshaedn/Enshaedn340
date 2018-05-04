@@ -1,8 +1,10 @@
 package com.enshaedn.ad340.enshaedn340k
 
+import android.app.Activity
 import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
@@ -19,11 +21,21 @@ const val PASS_PHRASE = "com.enshaedn.ad340.enshaedn340k.MESSAGE"
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var mDrawerLayout: DrawerLayout
+    private lateinit var sharedPref: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolBar))
+
+        sharedPref = getPreferences(Context.MODE_PRIVATE)
+        val pEdit = findViewById<EditText>(R.id.editText)
+        val storedPhrase = sharedPref.getString("phraseInput", "")
+        if(storedPhrase.isNotEmpty()) {
+            pEdit.setHint(storedPhrase)
+        } else {
+            pEdit.setHint("why won't this work?")
+        }
 
         val actBar: ActionBar? = supportActionBar
         actBar?.setDisplayHomeAsUpEnabled(true)
