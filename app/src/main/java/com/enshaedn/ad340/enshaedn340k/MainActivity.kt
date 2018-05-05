@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         sharedPref = getPreferences(Context.MODE_PRIVATE)
         val pEdit = findViewById<EditText>(R.id.editText)
         val storedPhrase = sharedPref.getString("phraseInput", "")
-        if(phraseCheck(storedPhrase)) {
+        if(storedPhrase.isNotEmpty()) {
             pEdit.setText(storedPhrase)
         } else {
             pEdit.setHint("Enter a message")
