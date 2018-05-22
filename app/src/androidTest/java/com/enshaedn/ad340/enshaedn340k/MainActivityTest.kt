@@ -28,6 +28,12 @@ class MainActivityTest {
     }
 
     @Test
+    fun uiExists() {
+        onView(withId(R.id.editText)).check(matches(isDisplayed()))
+        onView(withId(R.id.button)).check(matches(isDisplayed()))
+    }
+
+    @Test
     fun testPassPhrase() {
         //clear text then input some text
         onView(withId(R.id.editText)).perform(clearText(), typeText(tPhrase))
