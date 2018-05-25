@@ -5,12 +5,15 @@ import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.net.ConnectivityManager
+import android.net.NetworkInfo
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -19,7 +22,7 @@ import android.widget.*
 const val PASS_PHRASE = "com.enshaedn.ad340.enshaedn340k.MESSAGE"
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-
+    private val msg = "AD340K by Enshaedn: "
     private lateinit var mDrawerLayout: DrawerLayout
     private lateinit var sharedPref: SharedPreferences
 
@@ -64,8 +67,21 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
 
             R.id.nav_movie_list -> {
-                val zIntent = Intent(this, zombieList::class.java)
-                startActivity(zIntent)
+                if(isOnline()) {
+                    val zIntent = Intent(this, zombieList::class.java)
+                    startActivity(zIntent)
+                } else {
+                    Toast.makeText(applicationContext, "Internet Not Available", tDur).show()
+                }
+            }
+
+            R.id.nav_cam_list -> {
+                if(isOnline()) {
+                    val zIntent = Intent(this, cameraList::class.java)
+                    startActivity(zIntent)
+                } else {
+                    Toast.makeText(applicationContext, "Internet Not Available", tDur).show()
+                }
             }
         }
 
@@ -134,8 +150,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     //called when the user presses the '1' button
     fun zombieClick(view: View) {
         val gridb1 = findViewById<Button>(R.id.gridb1)
-        val zIntent = Intent(this, zombieList::class.java)
-        startActivity(zIntent)
+        if(isOnline()) {
+            val zIntent = Intent(this, zombieList::class.java)
+            startActivity(zIntent)
+        } else {
+            Toast.makeText(applicationContext, "Internet Not Available", tDur).show()
+        }
     }
 
     //toast duration
@@ -154,5 +174,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     //toast message for button 4
     fun gridB4Clicked(view: View) {
         Toast.makeText(applicationContext, "Button 4 clicked!", tDur).show()
+    }
+
+    fun isOnline(): Boolean {
+        val connectivityManager: ConnectivityManager? = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager?
+        val networkInfo: NetworkInfo? = connectivityManager?.activeNetworkInfo
+        return (networkInfo != null && networkInfo.isConnected)
     }
 }

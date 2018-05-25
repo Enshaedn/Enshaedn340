@@ -3,6 +3,7 @@
     package="com.enshaedn.ad340.enshaedn340k">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -27,7 +28,11 @@
         <activity
             android:name=".displayMovie"
             android:parentActivityName=".zombieList" />
-        <activity android:name=".aboutApp"
+        <activity
+            android:name=".aboutApp"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".cameraList"
             android:parentActivityName=".MainActivity" />
     </application>
 
