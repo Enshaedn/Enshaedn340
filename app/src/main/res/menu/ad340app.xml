@@ -28,6 +28,18 @@
         android:icon="@drawable/ic_call_black_24dp"
         app:showAsAction="ifRoom"/>
 
+    <item android:id="@+id/sdot"
+        android:title="@string/sdot"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/wsdot"
+        android:title="@string/wsdot"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/all"
+        android:title="@string/both"
+        app:showAsAction="never" />
+
     <item android:id="@+id/menu_settings"
         android:title="@string/title_settings"
         android:icon="@drawable/ic_settings_black_24dp"

@@ -48,6 +48,9 @@ class displayMovie : AppCompatActivity() {
         menu?.findItem(R.id.phrase)?.setVisible(false)
         menu?.findItem(R.id.zlist)?.setVisible(false)
         menu?.findItem(R.id.about)?.setVisible(false)
+        menu?.findItem(R.id.sdot)?.setVisible(false)
+        menu?.findItem(R.id.wsdot)?.setVisible(false)
+        menu?.findItem(R.id.all)?.setVisible(false)
         return true
     }
 
@@ -74,7 +77,7 @@ class displayMovie : AppCompatActivity() {
 }
 
 //class to download the images from their URLs
-private class DownloadImageTask(internal var bmImage: ImageView) : AsyncTask<String, Void, Bitmap>() {
+class DownloadImageTask(internal var bmImage: ImageView) : AsyncTask<String, Void, Bitmap>() {
     override fun doInBackground(vararg urls: String): Bitmap? {
         val urlDisp = urls[0]
         var zPic: Bitmap? = null

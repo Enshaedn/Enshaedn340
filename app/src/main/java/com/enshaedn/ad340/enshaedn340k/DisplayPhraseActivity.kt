@@ -35,6 +35,9 @@ class DisplayPhraseActivity : AppCompatActivity() {
         menu?.findItem(R.id.about)?.setVisible(false)
         menu?.findItem(R.id.zlist)?.setVisible(false)
         menu?.findItem(R.id.zDetail)?.setVisible(false)
+        menu?.findItem(R.id.sdot)?.setVisible(false)
+        menu?.findItem(R.id.wsdot)?.setVisible(false)
+        menu?.findItem(R.id.all)?.setVisible(false)
         return true
     }
 

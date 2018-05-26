@@ -4,25 +4,22 @@ import android.os.Parcel
 import android.os.Parcelable
 
 //class to create movie objects based on the JSON object passed through
-class trafficCam(camLat: Double, camLon: Double, id: String, desc: String, image: String, type: String): Parcelable {
-    val camLat = camLat
-    val camLon = camLon
+class trafficCam(coords: String, id: String, desc: String, image: String, type: String): Parcelable {
+    val coords = coords
     val id = id
     val desc = desc
     var image = image
     val type = type
 
     constructor(parcel: Parcel): this(
-            parcel.readDouble(),
-            parcel.readDouble(),
+            parcel.readString(),
             parcel.readString(),
             parcel.readString(),
             parcel.readString(),
             parcel.readString())
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeDouble(camLat)
-        parcel.writeDouble(camLon)
+        parcel.writeString(coords)
         parcel.writeString(id)
         parcel.writeString(desc)
         parcel.writeString(image)

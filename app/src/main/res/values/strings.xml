@@ -24,4 +24,7 @@
     <string name="navCamList">Traffic Cameras</string>
     <string name="title_settings">Settings</string>
     <string name="search">Search</string>
+    <string name="sdot">SDOT</string>
+    <string name="wsdot">WSDOT</string>
+    <string name="both">Both</string>
 </resources>
