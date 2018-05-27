@@ -91,7 +91,7 @@ class DownloadImageTask(internal var bmImage: ImageView) : AsyncTask<String, Voi
         return zPic
     }
 
-    override fun onPostExecute(result: Bitmap) {
+    override fun onPostExecute(result: Bitmap?) {
         bmImage.setImageBitmap(result)
     }
 }

@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.*
 import android.widget.ImageView
 import android.widget.TextView
@@ -22,7 +23,7 @@ class cameraList : AppCompatActivity() {
     private lateinit var trafficCamList: RecyclerView
     private lateinit var trafficCamAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
-    //private lateinit var tCams: MutableList<trafficCam>
+    //private var tCams: MutableList<trafficCam> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,32 +54,44 @@ class cameraList : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        //val filterCams: MutableList<trafficCam> = mutableListOf()
         when(item.itemId) {
             R.id.menu_settings -> {
                 Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
                 return true
             }
 
-            R.id.sdot -> {
-                /*lateinit val sdotCams: MutableList<trafficCam>
-                for (cam in 0..(tCams.size - 1)) {
-                    if(tCams[cam].type.equals("wsdot")) {
-                        sdotCams.add(tCams[cam])
+            /*R.id.sdot -> {
+                filterCams.clear()
+                for (i in 0..(tCams.size - 1)) {
+                    if(tCams[i].type.equals("sdot")) {
+                        filterCams.add(tCams[i])
                     }
-                }*/
+                }
+                camAdapter(filterCams, this).refreshRows(filterCams)
+                trafficCamAdapter.notifyDataSetChanged()
                 Toast.makeText(this, "Only SDOT Displayed", Toast.LENGTH_SHORT).show()
                 return true
             }
 
             R.id.wsdot -> {
+                filterCams.clear()
+                for (i in 0..(tCams.size - 1)) {
+                    if(tCams[i].type.equals("wsdot")) {
+                        filterCams.add(tCams[i])
+                    }
+                }
+                camAdapter(filterCams, this).refreshRows(filterCams)
+                trafficCamAdapter.notifyDataSetChanged()
                 Toast.makeText(this, "Only WSDOT Displayed", Toast.LENGTH_SHORT).show()
                 return true
             }
 
             R.id.all -> {
+                buildCams(this).execute("https://web6.seattle.gov/Travelers/api/Map/Data?zoomId=13&type=2")
                 Toast.makeText(this, "Both Displayed", Toast.LENGTH_SHORT).show()
                 return true
-            }
+            }*/
 
             else -> return super.onOptionsItemSelected(item)
         }
@@ -182,7 +195,10 @@ class camAdapter(private val myDataset: MutableList<trafficCam>, private val tcC
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.tView.text = myDataset[position].desc
+        Log.d("**************", myDataset[position].id)
+        Log.d("**************", myDataset[position].desc)
+        Log.d("**************", myDataset[position].image)
+        holder.tView.text = myDataset[position].desc + " (" + myDataset[position].type.toUpperCase() + ")"
         DownloadImageTask(holder.iView).execute(myDataset[position].image)
     }
 
