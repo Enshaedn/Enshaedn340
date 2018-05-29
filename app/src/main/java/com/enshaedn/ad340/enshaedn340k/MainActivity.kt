@@ -86,6 +86,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     Toast.makeText(applicationContext, "Internet Not Available", tDur).show()
                 }
             }
+
+            R.id.nav_cam_map -> {
+                if(isOnline()) {
+                    val zIntent = Intent(this, MapsActivity::class.java)
+                    startActivity(zIntent)
+                } else {
+                    Toast.makeText(applicationContext, "Internet Not Available", tDur).show()
+                }
+            }
         }
 
         mDrawerLayout.closeDrawer(GravityCompat.START)

@@ -11,7 +11,11 @@
             android:title="@string/actList" />
         <item
             android:id="@+id/nav_cam_list"
-            android:icon="@drawable/baseline_linked_camera_black_18dp"
+            android:icon="@drawable/baseline_linked_camera_black_24"
             android:title="@string/navCamList" />
+        <item
+            android:id="@+id/nav_cam_map"
+            android:icon="@drawable/baseline_map_black_24"
+            android:title="@string/camsMap" />
     </group>
 </menu>
