@@ -69,7 +69,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
     }
 
     private fun setUpMap() {
-        if(ActivityCompat.checkSelfPermission(this,
+        if (ActivityCompat.checkSelfPermission(this,
                         android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMISSION_REQUEST_CODE)
             return
@@ -84,8 +84,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         mapSettings.isRotateGesturesEnabled = false
         mapSettings.isMapToolbarEnabled = false
 
-        fusedLocationClient.lastLocation.addOnSuccessListener(this) {
-            location ->
+        fusedLocationClient.lastLocation.addOnSuccessListener(this) { location ->
             if (location != null) {
                 lastLocation = location
                 val currentLatLng = LatLng(location.latitude, location.longitude)
@@ -107,13 +106,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
 
         try {
             addresses = geocoder.getFromLocation(latlng.latitude, latlng.longitude, 1)
-            if(null != addresses && !addresses.isEmpty()) {
+            if (null != addresses && !addresses.isEmpty()) {
                 address = addresses[0]
-                for(i in 0..address.maxAddressLineIndex) {
-                    addressText += if(i == 0) address.getAddressLine(i) else "\n" + address.getAddressLine(i)
+                for (i in 0..address.maxAddressLineIndex) {
+                    addressText += if (i == 0) address.getAddressLine(i) else "\n" + address.getAddressLine(i)
                 }
             }
-        } catch(e: IOException) {
+        } catch (e: IOException) {
             Log.e("MapsActivity", e.localizedMessage)
         }
 
@@ -139,7 +138,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
     private fun placeMarkerOnMap(location: LatLng, camera: trafficCam) {
         val markerOptions = MarkerOptions().position(location)
         //markerOptions.title(camera.type)
-        if(camera.type.equals("sdot")) {
+        if (camera.type.equals("sdot")) {
             markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET))
         } else {
             markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
@@ -147,7 +146,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         mMap.addMarker(markerOptions).tag = camera
     }
 
-    private inner class buildCams(var tcContext: MapsActivity): AsyncTask<String, String, String>() {
+    private inner class buildCams(var tcContext: MapsActivity) : AsyncTask<String, String, String>() {
 
         override fun doInBackground(vararg params: String?): String {
             var connection: HttpsURLConnection? = null
@@ -161,19 +160,19 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
                 readJSON = BufferedReader(InputStreamReader(connection.inputStream))
 
                 return readJSON.readLine()
-            } catch(e: MalformedURLException) {
+            } catch (e: MalformedURLException) {
                 e.printStackTrace()
-            } catch(e: IOException) {
+            } catch (e: IOException) {
                 e.printStackTrace()
             } finally {
-                if(connection != null) {
+                if (connection != null) {
                     connection.disconnect()
                 }
                 try {
-                    if(readJSON != null) {
+                    if (readJSON != null) {
                         readJSON.close()
                     }
-                } catch(e: IOException) {
+                } catch (e: IOException) {
                     e.printStackTrace()
                 }
             }
@@ -191,26 +190,26 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
             val jObj = JSONObject(result)
             val jArray = jObj.getJSONArray("Features")
 
-            for(i in 0..(jArray.length() - 1)) {
+            for (i in 0..(jArray.length() - 1)) {
                 val list = JSONObject(jArray[i].toString())
                 val count = JSONArray(list.getString("Cameras")).length() - 1
                 val camera = JSONArray(list.getString("Cameras"))
 
-                for(j in 0..count) {
+                for (j in 0..count) {
                     coords = JSONObject(jArray[i].toString()).getString("PointCoordinate")
                     id = camera.getJSONObject(j).getString("Id")
                     desc = camera.getJSONObject(j).getString("Description")
                     image = camera.getJSONObject(j).getString("ImageUrl")
                     type = camera.getJSONObject(j).getString("Type")
 
-                    if(type.equals("sdot")) {
+                    if (type.equals("sdot")) {
                         image = "http://www.seattle.gov/trafficcams/images/" + image
                     } else {
                         image = "http://images.wsdot.wa.gov/nw/" + image
                     }
 
                     val lat = coords.substring(1, coords.indexOf(",")).toDouble()
-                    val lng = coords.substring(coords.indexOf(",")+1, coords.length - 1).toDouble()
+                    val lng = coords.substring(coords.indexOf(",") + 1, coords.length - 1).toDouble()
 
                     val temp = trafficCam(coords, id, desc, image, type)
 
@@ -233,7 +232,7 @@ class customInfoAdapter(private val context: MapsActivity) : GoogleMap.InfoWindo
         val camImg: ImageView = view.findViewById(R.id.map_cam)
 
         if(p0?.tag != null) {
-            val temp = p0?.tag as trafficCam
+            val temp = p0.tag as trafficCam
 
             details.text = temp.desc + " (" + temp.type.toUpperCase() + ")"
             DownloadImageTask(camImg).execute(temp.image)
