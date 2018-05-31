@@ -9,8 +9,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
+import android.view.*
 import android.widget.ImageView
 import android.widget.TextView
 import com.google.android.gms.location.*
@@ -28,6 +27,7 @@ import java.io.InputStreamReader
 import java.net.MalformedURLException
 import java.net.URL
 import javax.net.ssl.HttpsURLConnection
+import javax.security.auth.callback.Callback
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
@@ -221,20 +221,25 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
 }
 
 class customInfoAdapter(private val context: MapsActivity) : GoogleMap.InfoWindowAdapter {
-    override fun getInfoWindow(p0: Marker?): View? {
+    private val view: View
+
+    init {
+        view = LayoutInflater.from(context).inflate(R.layout.cam_info_window, null)
+    }
+
+    override fun getInfoWindow(p0: Marker): View? {
         return null
     }
 
-    override fun getInfoContents(p0: Marker?): View? {
-        val view: View = LayoutInflater.from(context).inflate(R.layout.cam_info_window, null)
-
+    override fun getInfoContents(p0: Marker): View? {
         val details: TextView = view.findViewById(R.id.map_cam_text)
         val camImg: ImageView = view.findViewById(R.id.map_cam)
 
-        if(p0?.tag != null) {
+        if(p0.tag != null) {
             val temp = p0.tag as trafficCam
 
             details.text = temp.desc + " (" + temp.type.toUpperCase() + ")"
+
             DownloadImageTask(camImg).execute(temp.image)
 
             return view
